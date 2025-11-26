@@ -64,11 +64,13 @@ cd base
 
 
 powershell
+
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 دانلود و اجرای اسکریپت نصب probe-rs-tools:
 
 
 powershell
+
 Invoke-WebRequest https://github.com/probe-rs/probe-rs/releases/latest/download/probe-rs-tools-installer.ps1 -OutFile probe-rs-tools-installer.ps1
 .\probe-rs-tools-installer.ps1
 نصب موفق ابزارها: cargo-flash, cargo-embed, probe-rs
