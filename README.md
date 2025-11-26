@@ -54,6 +54,22 @@ git clone https://cgit.pinealservo.com/BluePill_Rust/blue_pill_base ./base/
 cd base
 
 
+⚙️ ابزارهای فلش و دیباگ
+نصب اولیه‌ی cargo-flash قدیمی → خطا داد چون به probe-rs منتقل شده.
+
+تغییر Execution Policy برای اجرای اسکریپت نصب:
+
+powershell
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+دانلود و اجرای اسکریپت نصب probe-rs-tools:
+
+powershell
+Invoke-WebRequest https://github.com/probe-rs/probe-rs/releases/latest/download/probe-rs-tools-installer.ps1 -OutFile probe-rs-tools-installer.ps1
+.\probe-rs-tools-installer.ps1
+نصب موفق ابزارها: cargo-flash, cargo-embed, probe-rs.
+
+یادگیری اینکه دستور جدید برای لیست پروب‌ها این است:
+
 probe-rs list
 
 "The following devices were found:
