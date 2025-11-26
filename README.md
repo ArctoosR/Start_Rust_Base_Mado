@@ -95,7 +95,31 @@ Build the sample code
 cargo flash --release --chip STM32F103C8
 
 
+//#####################################################################################################
 
+📦 ابزارهای جانبی
+
+یادگیری دستور تبدیل ELF به BIN
+:
+
+
+powershell
+
+arm-none-eabi-objcopy -O binary target/thumbv7m-none-eabi/release/bluepill_blink bluepill_blink.bin
+دستور تبدیل ELF به HEX
+:
+
+
+powershell
+
+arm-none-eabi-objcopy -O ihex target/thumbv7m-none-eabi/release/bluepill_blink bluepill_blink.hex
+بررسی سایز فایل ELF
+:
+
+
+powershell
+
+arm-none-eabi-size target/thumbv7m-none-eabi/release/bluepill_blink
 
 
 
