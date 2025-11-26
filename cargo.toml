@@ -1,0 +1,39 @@
+[package]
+name = "blue_pill_base"
+version = "0.1.0"
+authors = ["Levi Pearson <levipearson@gmail.com>"]
+description = "Base binary crate for STM32F103 Blue Pill boards"
+categories = ["embedded", "no-std"]
+edition = "2021"
+
+[dependencies]
+cortex-m = "0.7.7"
+cortex-m-rt = "0.7.5"
+embedded-hal = "1.0"
+nb = "1.1"
+stm32f1xx-hal = { version = "0.11.0", features = [ "stm32f103", "medium"] }
+rtt-target = "0.6.2"
+panic-rtt-target = { version = "0.1.0", features = ["cortex-m"] }
+switch-hal = "0.4.0"
+arrayvec = { version = "0.7.2", default-features = false }
+ssd1306 = "0.7.0"
+embedded-graphics = "0.7.1"
+either = { version = "1.5.3", default-features = false }
+panic-halt = "1.0.0"
+# alternate panic impls, choose only one!
+#   panic-halt
+#   panic-semihosting # requires cortex-m-semihosting
+#   panic-itm
+#   panic-abort
+#   panic-ramdump
+#   panic-persist
+
+[[bin]]
+name = "blue_pill_base"
+test = false
+bench = false
+
+[profile.release]
+lto = true
+codegen-units = 1
+debug = true
