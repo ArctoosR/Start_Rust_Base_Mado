@@ -106,6 +106,7 @@ cargo flash --release --chip STM32F103C8
 powershell
 
 arm-none-eabi-objcopy -O binary target/thumbv7m-none-eabi/release/bluepill_blink bluepill_blink.bin
+
 دستور تبدیل ELF به HEX
 :
 
@@ -113,6 +114,7 @@ arm-none-eabi-objcopy -O binary target/thumbv7m-none-eabi/release/bluepill_blink
 powershell
 
 arm-none-eabi-objcopy -O ihex target/thumbv7m-none-eabi/release/bluepill_blink bluepill_blink.hex
+
 بررسی سایز فایل ELF
 :
 
@@ -120,6 +122,7 @@ arm-none-eabi-objcopy -O ihex target/thumbv7m-none-eabi/release/bluepill_blink b
 powershell
 
 arm-none-eabi-size target/thumbv7m-none-eabi/release/bluepill_blink
+
 
 
 
