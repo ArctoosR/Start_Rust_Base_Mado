@@ -443,3 +443,34 @@ let mut duty_target = (duty_ff + duty_corr).clamp(0, ARR);
         }
     }
 }
+
+//###############################################
+Error (خطا بین سرعت مرجع و واقعی)
+
+Delta Error (تغییر خطا بین دو نمونه)
+
+RPM واقعی (برای تشخیص ناحیه کاری موتور)
+
+و یک خروجی: Duty Correction که به PWM اضافه می‌شود.
+
+🧩 ساختار کنترل فازی پیشرفته
+1. Membership Functions
+Error: NB, NM, NS, ZE, PS, PM, PB
+
+Delta Error: NB, NS, ZE, PS, PB
+
+RPM: Low, Medium, High
+
+Duty Correction: NB, NS, ZE, PS, PB
+
+2. Rule Base نمونه
+اگر Error بزرگ مثبت و RPM پایین → خروجی Boost بزرگ (PB)
+
+اگر Error کوچک و Delta Error بزرگ مثبت → خروجی کوچک (PS)
+
+اگر Error نزدیک صفر و RPM متوسط → خروجی صفر (ZE)
+
+اگر Error منفی و RPM بالا → خروجی کاهش شدید (NB)
+
+3. Defuzzification
+روش Weighted Average یا Center of Gravity برای خروجی عددی.
